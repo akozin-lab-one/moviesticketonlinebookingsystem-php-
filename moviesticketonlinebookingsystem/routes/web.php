@@ -157,8 +157,11 @@ Route::middleware([
 
     Route::middleware(['user_auth'])->group(function () {
         Route::prefix('user')->group(function(){
-            //usermain
+            //usermainPage
             Route::get('userMain', [UserController::class,'UserMainPage'])->name('User#mainPage');
+
+            //userAbout
+            Route::get('userAbout', [UserController::class, 'UserAboutPage'])->name('User#AboutPage');
 
         });
     });
